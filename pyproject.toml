@@ -1,4 +1,87 @@
 [build-system]
+ cursor/build-collabllm-user-simulation-for-healthcare-ai-4e5c
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "collabllm-sim"
+version = "0.1.0"
+description = "CollabLLM-inspired healthcare conversation user simulator"
+readme = "README.md"
+authors = [
+  { name = "MicrosoftWuyxin" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+keywords = ["simulation", "healthcare", "LLM", "user-simulator", "collaboration"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "typer[all]>=0.12.3",
+  "pydantic>=2.7",
+  "httpx>=0.27",
+  "anyio>=4.4",
+  "rich>=13.7",
+  "orjson>=3.10",
+  "tenacity>=9.0",
+  "python-dotenv>=1.0",
+  "uvloop>=0.19; sys_platform != 'win32'",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["collabllm_sim"]
+
+[project.scripts]
+collabllm-sim = "collabllm_sim.cli:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+line-length = 100
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+  "UP", # pyupgrade
+  "N",  # pep8-naming
+  "B",  # flake8-bugbear
+]
+ignore = [
+  "E501", # handled by black
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true
+explicit_package_bases = true
+namespace_packages = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+pythonpath = ["."]
+
+=======
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
@@ -68,3 +151,4 @@ disable_error_code = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+
