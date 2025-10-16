@@ -1,0 +1,2 @@
+[console_scripts]
+collab-sim = collab_sim.cli:main

@@ -1,3 +1,26 @@
+Metadata-Version: 2.4
+Name: collab-sim
+Version: 0.1.0
+Summary: CollabLLM-inspired user simulation framework for multi-turn healthcare conversations
+Author: Simulation Team
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: typer>=0.12.3
+Requires-Dist: pydantic>=2.7.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: rich>=13.7.0
+Provides-Extra: dashboard
+Requires-Dist: streamlit>=1.35.0; extra == "dashboard"
+Requires-Dist: pandas>=2.2.0; extra == "dashboard"
+Provides-Extra: test
+Requires-Dist: pytest>=8.2.0; extra == "test"
+Requires-Dist: pytest-asyncio>=0.23.0; extra == "test"
+Requires-Dist: pytest-xdist>=3.6.0; extra == "test"
+Requires-Dist: pytest-cov>=5.0.0; extra == "test"
+Provides-Extra: dev
+Requires-Dist: ruff>=0.6.0; extra == "dev"
+Requires-Dist: mypy>=1.10.0; extra == "dev"
+
 # Collab Sim
 
 CollabLLM-inspired simulation framework for multi-turn healthcare conversations.
