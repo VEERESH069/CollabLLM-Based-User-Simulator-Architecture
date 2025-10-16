@@ -1,3 +1,4 @@
+ cursor/build-collabllm-user-simulation-for-healthcare-ai-4e5c
 # CollabLLM Healthcare Conversation User Simulator
 
 A CollabLLM‑inspired user simulation framework for multi‑turn healthcare conversations. It is designed to test and benchmark Patient AI and Clinic AI services through realistic, bilingual (Arabic/English) conversations that reflect real clinic workflows.
@@ -215,3 +216,30 @@ pytest -q
 
 ## License
 TBD
+=======
+# Collab Sim
+
+CollabLLM-inspired simulation framework for multi-turn healthcare conversations.
+
+## Quick start
+
+- Install: `pip install -e .[test]`
+- Run CLI: `collab-sim run --scenario appointment_booking --language bilingual --num-conversations 3`
+- Show personas: `collab-sim personas -n 5`
+- Dashboard: `pip install -e .[dashboard] && collab-sim dashboard`
+
+## Structure
+
+- `src/collab_sim/personas`: patient and clinic personas
+- `src/collab_sim/scenarios`: scenario generator
+- `src/collab_sim/lang`: bilingual helpers (en/ar)
+- `src/collab_sim/connectors`: connectors to Patient AI and Clinic AI (stubs)
+- `src/collab_sim/env`: multi-turn conversation simulator
+- `src/collab_sim/rewards`: reward/metrics
+- `src/collab_sim/analytics`: logging and dashboard
+- `tests`: unit, flow, load
+
+## Notes
+
+This initial version uses stubbed clients. Replace with real HTTP clients to integrate with Patient AI Service and Clinic AI Service.
+
