@@ -1,4 +1,4 @@
- cursor/build-collabllm-user-simulation-for-healthcare-ai-4e5c
+
 # CollabLLM Healthcare Conversation User Simulator
 
 A CollabLLM‑inspired user simulation framework for multi‑turn healthcare conversations. It is designed to test and benchmark Patient AI and Clinic AI services through realistic, bilingual (Arabic/English) conversations that reflect real clinic workflows.
